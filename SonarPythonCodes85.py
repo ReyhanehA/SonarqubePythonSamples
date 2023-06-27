@@ -1,4 +1,4 @@
-Python 2 and Python 3
+#Python 2 and Python 3
 import sys
 from sys import stdin, __stdin__
 
@@ -19,25 +19,3 @@ sys.stdin.readlines()  # Sensitive
 # Calling other methods on stdin or __stdin__ does not require a review, thus it is not Sensitive
 sys.stdin.seekable()  # Ok
 # ...
-----------------------------------------------------
-Python 2 only
-
-raw_input('What is your password?')  # Sensitive
-----------------------------------------------------
-Python 3 only
-
-input('What is your password?')  # Sensitive
-----------------------------------------------------
-Function fileinput.input and class fileinput.FileInput read the standard input when the list of files is empty.
-
-for line in fileinput.input():  # Sensitive
-    print(line)
-
-for line in fileinput.FileInput():  # Sensitive
-    print(line)
-
-for line in fileinput.input(['setup.py']):  # Ok
-    print(line)
-
-for line in fileinput.FileInput(['setup.py']):  # Ok
-    print(line)

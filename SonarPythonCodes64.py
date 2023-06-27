@@ -1,4 +1,4 @@
-For aws_cdk.aws_ec2.SecurityGroup:
+#For aws_cdk.aws_ec2.SecurityGroup:
 
 from aws_cdk import (
     aws_ec2 as ec2
