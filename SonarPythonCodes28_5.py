@@ -1,7 +1,7 @@
-#pycryptodomex library:
+#pycryptodome library:
 
-from Cryptodome.Cipher import DES, DES3, ARC2, ARC4, Blowfish, AES
-from Cryptodome.Random import get_random_bytes
+from Crypto.Cipher import DES, DES3, ARC2, ARC4, Blowfish, AES
+from Crypto.Random import get_random_bytes
 
 key = b'-8B key-'
 DES.new(key, DES.MODE_OFB) # Noncompliant: DES works with 56-bit keys allow attacks via exhaustive search
@@ -17,8 +17,3 @@ cipher = ARC4.new(key) # Noncompliant: vulnerable to several attacks (see https:
 
 key = b'An arbitrarily long key'
 cipher = Blowfish.new(key, Blowfish.MODE_CBC) # Noncompliant: Blowfish use a 64-bit block size makes it vulnerable to birthday attacks
-
-
-
-
-

@@ -4,8 +4,3 @@ from flask import render_template
 def hello(name=None):
     hello = f"<h1>Hello { name }</h1>"
     return render_template('hello.html', hello=hello)
-------------------------------------------------------
-<!doctype html>
-{% autoescape false %}
-{{ hello }} <!-- Noncompliant -->
-{% endautoescape %}
